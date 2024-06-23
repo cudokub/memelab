@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Poppins:wght@400;700&display=swap');
 
 body {
     margin: 0;
@@ -45,54 +46,55 @@ header h1 {
 }
 
 .input-container {
-    margin-top: 16px;
+    margin-top: 24px;
 }
 
 .search-container {
     display: flex;
     align-items: center;
-    gap: 8px;
+    margin-bottom: 16px;
 }
 
 .search-container input {
-    width: calc(100% - 32px);
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    text-align: center;
     padding: 16px;
-    margin: 8px 0;
     border: 2px solid #00FF00;
     background-color: #102B09;
     color: #00FF00;
-    font-family: 'Pixelify Sans', sans-serif;
     font-size: 16px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .search-container input::placeholder {
     color: #00FF00;
 }
 
-
-.select-container {
-    margin-top: 8px;
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.select-container select {
-    width: calc(100% - 32px);
-    padding: 16px;
-    border: 2px solid #00FF00;
-    background-color: #102B09;
-    color: #00FF00;
-    font-family: 'Pixelify Sans', sans-serif;
-    font-size: 16px;
+.meme-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #091905;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    flex: 1 1 30%;
+    max-width: 30%;
 }
 
-
-.select-container select {
-    appearance: none;
-    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300FF00"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 24px;
+.meme-button:hover {
+    background-color: #0f0;
+    color: #091905;
 }
-
 
 @media (min-width: 600px) {
     .container {
@@ -102,5 +104,19 @@ header h1 {
     .search-container input,
     .search-container select {
         width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .meme-button {
+        flex: 1 1 45%; /* Adjust button size for tablets */
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .meme-button {
+        flex: 1 1 45%; /* Adjust button size for mobile phones */
+        max-width: 45%;
     }
 }
