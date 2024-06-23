@@ -17,14 +17,20 @@
         <div class="character">
             <img src="https://i.imgur.com/GtFIJNO.gif">
         </div>
-        <div class="search-container">
-            <input type="text" placeholder="Search Token Name">
-            <select>
-                <option value="" disabled selected>Select...</option>
-                <option value="no-background">No Background</option>
-                <option value="gm">GM</option>
-            </select>
+        <div class="input-container">
+            <div class="search-container">
+                <input type="text" placeholder="Search Token Name">
+                <button type="button" onclick="searchToken()">Search</button>
+            </div>
+            <div class="select-container">
+                <select>
+                    <option value="" disabled selected>Select...</option>
+                    <option value="no-background">No Background</option>
+                    <option value="gm">GM</option>
+                </select>
+            </div>
         </div>
+
     </div>
 </body>
 </html>

@@ -44,12 +44,16 @@ header h1 {
     border: 2px solid #00FF00;
 }
 
-.search-container {
+.input-container {
     margin-top: 16px;
 }
 
-.search-container input,
-.search-container select {
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
     width: calc(100% - 32px);
     padding: 16px;
     margin: 8px 0;
@@ -64,13 +68,47 @@ header h1 {
     color: #00FF00;
 }
 
-.search-container select {
+.search-container button {
+    border: 2px solid #00FF00;
+    background-color: #00FF00;
+    color: #102B09;
+    font-family: 'Pixelify Sans', sans-serif;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 17.5px;
+    padding-bottom: 17.5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #1A7C03;
+    color: #00FF00;
+}
+
+
+.select-container {
+    margin-top: 8px;
+}
+
+.select-container select {
+    width: calc(100% - 32px);
+    padding: 16px;
+    border: 2px solid #00FF00;
+    background-color: #102B09;
+    color: #00FF00;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+.select-container select {
     appearance: none;
     background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300FF00"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 24px;
 }
+
 
 @media (min-width: 600px) {
     .container {
