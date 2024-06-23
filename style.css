@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: #061304;
+    color: #39F90C;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 8px;
+    padding-bottom: 32px;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 16px;
+    max-width: 400px;
+    width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+.character img {
+    width: 100%;
+    max-width: 360px;
+    border: 2px solid #00FF00;
+}
+
+.search-container {
+    margin-top: 8px;
+}
+
+.search-container input,
+.search-container select {
+    width: calc(100% - 32px);
+    padding: 16px;
+    margin: 8px 0;
+    border: 2px solid #00FF00;
+    background-color: #102B09;
+    color: #00FF00;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 16px;
+}
+
+.search-container input::placeholder {
+    color: #00FF00;
+}
+
+.search-container select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300FF00"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 24px;
+}
+
+@media (min-width: 600px) {
+    .container {
+        padding: 40px;
+    }
+
+    .search-container input,
+    .search-container select {
+        width: calc(100% - 40px);
+    }
+}
