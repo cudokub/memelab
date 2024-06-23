@@ -1,4 +1,4 @@
 # Memelab
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/cudokub/pen/rNgvmzj](https://codepen.io/cudokub/pen/rNgvmzj).
+A Project created by [Mad Scientists]([https://codepen.io/cudokub/pen/rNgvmzj](https://www.madscientists.io/)).
 
