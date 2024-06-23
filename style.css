@@ -51,6 +51,7 @@ header h1 {
 .search-container {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .search-container input {
@@ -85,6 +86,10 @@ header h1 {
     color: #00FF00;
 }
 
+.search-container button:active {
+    background-color: #00FF00;
+    color: #102B09;
+}
 
 .select-container {
     margin-top: 8px;
