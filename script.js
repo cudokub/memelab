@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchTokenInput = document.getElementById('search-token');
 
     // Default image URL
-    const defaultImageUrl = 'https://i.imgur.com/GtFIJNO.gif';
+    const defaultImageUrl = 'https://imgur.com/owidurD.gif';
 
     // Loading spinner image URL
     const loadingSpinnerUrl = 'waiting-wheel.gif'; 
