@@ -52,4 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Toggle switch functionality
+    const toggleSwitch = document.getElementById('background-toggle');
+
+    toggleSwitch.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            // Handle Background enabled
+            console.log('Background enabled');
+            // Add your backend interaction code here
+        } else {
+            // Handle NoBackground enabled
+            console.log('NoBackground enabled');
+            // Add your backend interaction code here
+        }
+    });
 });
