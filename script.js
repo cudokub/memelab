@@ -58,12 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleSwitch.addEventListener('change', (event) => {
         if (event.target.checked) {
-            // Handle Background enabled
-            console.log('Background enabled');
+            // Handle background-off
+            console.log('background-off');
             // Add your backend interaction code here
         } else {
-            // Handle NoBackground enabled
-            console.log('NoBackground enabled');
+            // Handle background-on
+            console.log('background-on');
             // Add your backend interaction code here
         }
     });
