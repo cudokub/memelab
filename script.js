@@ -3,12 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.meme-button');
     const characterImage = document.querySelector('.character img');
     const searchTokenInput = document.getElementById('search-token');
+    const toggleSwitch = document.getElementById('background-toggle');
 
     // Default image URL
     const defaultImageUrl = 'https://imgur.com/owidurD.gif';
 
     // Loading spinner image URL
-    const loadingSpinnerUrl = 'waiting-wheel.gif'; 
+    const loadingSpinnerUrl = 'waiting-wheel.gif';
+
+    // Variable to store the last button pressed
+    let lastMemeType = 'default';
+
+    // Timeout variable for debouncing
+    let debounceTimeout;
 
     // Function to validate if the input is a number
     function isValidNumber(value) {
@@ -16,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Function to fetch and update the character image
-    function fetchAndUpdateImage(memeType, id) {
+    function fetchAndUpdateImage(memeType, id, background) {
         if (isValidNumber(id)) {
-            const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}`;
+            const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}&background=${background}`;
             characterImage.src = loadingSpinnerUrl; // Use the spinning wheel while image loads
             fetch(imageUrl)
                 .then(response => {
@@ -36,10 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Update character image when typing in the search-token input
+    // Update character image when typing in the search-token input with debounce
     searchTokenInput.addEventListener('input', () => {
-        const id = searchTokenInput.value.trim();
-        fetchAndUpdateImage('default', id);
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            const id = searchTokenInput.value.trim();
+            const background = toggleSwitch.checked;
+            fetchAndUpdateImage('default', id, background);
+        }, 1500);
     });
 
     // Update character image when a button is clicked
@@ -47,24 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const value = button.getAttribute('data-value');
             const id = searchTokenInput.value.trim();
+            const background = toggleSwitch.checked;
             if (isValidNumber(id)) {
-                fetchAndUpdateImage(value, id);
+                lastMemeType = value; // Update lastMemeType with the button's value
+                fetchAndUpdateImage(value, id, background);
             }
         });
     });
 
     // Toggle switch functionality
-    const toggleSwitch = document.getElementById('background-toggle');
-
     toggleSwitch.addEventListener('change', (event) => {
-        if (event.target.checked) {
-            // Handle background-off
-            console.log('background-off');
-            // Add your backend interaction code here
-        } else {
-            // Handle background-on
-            console.log('background-on');
-            // Add your backend interaction code here
-        }
+        const memeType = lastMemeType || 'default';
+        const id = searchTokenInput.value.trim();
+        const background = event.target.checked;
+        fetchAndUpdateImage(memeType, id, background);
     });
 });
