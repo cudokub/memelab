@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch and update the character image
     function fetchAndUpdateImage(memeType, id, background) {
         if (isValidNumber(id)) {
-            const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}&background=${background}`;
+            const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}&background=${!background}`;
             characterImage.src = loadingSpinnerUrl; // Use the spinning wheel while image loads
             fetch(imageUrl)
                 .then(response => {
