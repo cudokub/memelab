@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch and update the character image
     function fetchAndUpdateImage(memeType, id, background) {
+        console.log('fetching')
         if (isValidNumber(id)) {
             const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}&background=${!background}`;
             characterImage.src = loadingSpinnerUrl; // Use the spinning wheel while image loads
@@ -32,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    characterImage.src = imageUrl; // Set to the new image URL once loaded
+                    return response.blob(); // Convert the response to a blob
+                })
+                .then(blob => {
+                    const objectURL = URL.createObjectURL(blob);
+                    characterImage.src = objectURL; // Set to the new image URL once loaded
                 })
                 .catch(error => {
                     console.error('Error fetching image:', error);
