@@ -173,3 +173,10 @@ input:checked + .slider:before {
     font-size: 0.75em;
     color: #00FF00; /* Match the green color of your theme */
 }
+
+/* Add styles for the footer logo */
+.footer-logo img {
+    width: 49px;
+    height: 32px;
+    margin-top: 32px;
+}
