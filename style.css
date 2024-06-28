@@ -176,9 +176,9 @@ input:checked + .slider:before {
 
 /* Add styles for the footer logo */
 .footer-logo img {
-    width: 49px;
-    height: 32px;
-    margin-top: 32px;
+    width: 74px;
+    height: 48px;
+    margin-top: 24px;
 }
 
 /* Add styles for the footer text */
