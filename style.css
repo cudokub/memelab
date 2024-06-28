@@ -178,5 +178,22 @@ input:checked + .slider:before {
 .footer-logo img {
     width: 49px;
     height: 32px;
-    margin-top: 32px;
+    margin-top: 48px;
+}
+
+/* Add styles for the footer text */
+.footer-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #00FF00; /* Match the green color of your theme */
+}
+
+.footer-text a {
+    color: #00FF00; /* Match the green color of your theme */
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
 }
