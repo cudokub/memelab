@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const host = 'https://overlays-ui.vercel.app'
+    const host = 'https://eleiton.dev'
     const buttons = document.querySelectorAll('.meme-button');
     const characterImage = document.querySelector('.character img');
     const searchTokenInput = document.getElementById('search-token');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function fetchAndUpdateImage(memeType, id, background) {
         console.log('fetching')
         if (isValidNumber(id)) {
-            const imageUrl = `${host}/api?nft=madscientists&meme=${memeType}&id=${id}&background=${!background}`;
+            const imageUrl = `${host}/api/madscientists/memelab?nft=madscientists&meme=${memeType}&id=${id}&background=${!background}`;
             characterImage.src = loadingSpinnerUrl; // Use the spinning wheel while image loads
             fetch(imageUrl)
                 .then(response => {
