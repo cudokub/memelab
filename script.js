@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const host = 'https://eleiton.dev'
+    const host = 'https://overlays-ui.vercel.app'
     const buttons = document.querySelectorAll('.meme-button');
     const characterImage = document.querySelector('.character img');
     const searchTokenInput = document.getElementById('search-token');
